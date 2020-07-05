@@ -152,46 +152,54 @@
       </div>
     </nav>
 
-    <section>
-      <h2 class="section__head">
-        Featured Books
-      </h2>
-      <div class="carousel"></div>
-    </section>
-    <section>
-      <h2>
-        Recently Added
-      </h2>
-      <ul class="recent-list">
-        <article class="book">
-          <div></div>
-          <div class="book-details">
-            <p>
-              Available
-            </p>
-            <h3>
-              The Effective Engineer
-            </h3>
-            <p>
-              Edmond Lau - 2009
-            </p>
-            <p>Motivational</p>
-            <div class="">
-              <div class="rating">
-                <p>
-                  Rating: 4.0
-                </p>
-                <div class="rating-stars"></div>
-              </div>
-              <div>
-                <div class="people"></div>
-                <div class="like"></div>
+    <main class="main">
+      <section class="carousel">
+        <h2 class="bookshelf__head">
+          Featured Books
+        </h2>
+        <div class="carousel"></div>
+      </section>
+
+      <section class="bookshelf">
+        <h2 class="bookshelf__head">
+          Recently Added
+        </h2>
+        <div class="bookshelf__list">
+          <article class="book">
+            <div class="book__thumbnail">
+              <img
+                src="https://uploads.codesandbox.io/uploads/user/db5ae789-9853-4e8a-b3e4-cd9a299b27f2/0RXu-effective%20engineer.png"
+              />
+            </div>
+            <div class="book__details">
+              <p>
+                Available
+              </p>
+              <h3>
+                The Effective Engineer
+              </h3>
+              <p>
+                Edmond Lau - 2009
+              </p>
+              <p>Motivational</p>
+              <div class="">
+                <div class="rating">
+                  <p>
+                    Rating: 4.0
+                  </p>
+                  <div class="rating-stars"></div>
+                </div>
+                <div>
+                  <div class="people"></div>
+                  <div class="like"></div>
+                </div>
               </div>
             </div>
-          </div>
-        </article>
-      </ul>
-    </section>
+          </article>
+        </div>
+      </section>
+    </main>
+
     <section>
       <h2>
         All Books
@@ -199,7 +207,7 @@
       <ul class="all-list"></ul>
     </section>
 
-    <div class="sidebar-overlay">
+    <div class="sidebar-overlay ">
       <div class="sidebar">
         <div class="sidebar-top">
           <div class="sidebar__back-btn">
@@ -247,34 +255,36 @@
 
         <div class="sidebar__nav">
           <ul class="sidebar__nav--list">
-            <li>Home</li>
-            <li>Profile</li>
-            <li>Notification</li>
+            <li class="sidebar__nav--link"><a>Home</a><span></span></li>
+            <li class="sidebar__nav--link"><a>Profile</a><span></span></li>
+            <li class="sidebar__nav--link">
+              <a>Notifications</a><span></span>
+            </li>
           </ul>
-          <div class="sidebar-explore">
-            <h2>Explore</h2>
-            <ul>
-              <li>Books</li>
-              <li>Genres</li>
-              <li>Authors</li>
-            </ul>
-          </div>
-          <div class="sidebar-explore">
-            <h2>My Books</h2>
-            <ul>
-              <li>Queue</li>
-              <li>Currently Borrowed</li>
-              <li>Favourites</li>
-              <li>History</li>
-            </ul>
-          </div>
-        </div>
-        <div class="sidebar-admin">
-          <h2>Admin</h2>
-          <ul>
-            <li>Book Requests</li>
-            <li>Members</li>
-            <li>Library Settings</li>
+          <ul class="sidebar__nav--list">
+            <li class="sidebar__nav--heading">Explore</li>
+            <li class="sidebar__nav--link"><a>Books</a><span>273</span></li>
+            <li class="sidebar__nav--link"><a>Genres</a><span>42</span></li>
+            <li class="sidebar__nav--link"><a>Authors</a><span>106</span></li>
+          </ul>
+          <ul class="sidebar__nav--list">
+            <li class="sidebar__nav--heading">My Books</li>
+            <li class="sidebar__nav--link"><a>Queue</a><span>3</span></li>
+            <li class="sidebar__nav--link">
+              <a>Currently Borrowed</a><span>3</span>
+            </li>
+            <li class="sidebar__nav--link"><a>Favourites</a><span>3</span></li>
+            <li class="sidebar__nav--link"><a>History</a><span>3</span></li>
+          </ul>
+          <ul class="sidebar__nav--list">
+            <li class="sidebar__nav--heading">Admin</li>
+            <li class="sidebar__nav--link">
+              <a>Book Requests</a><span>3</span>
+            </li>
+            <li class="sidebar__nav--link"><a>Members</a><span>3</span></li>
+            <li class="sidebar__nav--link">
+              <a>Library Settings</a><span>3</span>
+            </li>
           </ul>
         </div>
       </div>
