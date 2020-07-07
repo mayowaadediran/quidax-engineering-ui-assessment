@@ -3,48 +3,61 @@
     {
       "title": "The Effective Programmer",
       "author": "Edmond Lau",
-      "published": "2014-12-14T00:00:00.000Z",
-      "category": "Motivational",
+      "published": "2009",
+      "genre": "Motivational",
+      "labels": "Creative, Self-help",
       "ratings": 4,
       "readers": 31,
-      "likes": 29
+      "likes": 29,
+      "available": true,
+      "imageUrl": "/images/effective_engineer.png"
     },
     {
-        "title": "The Effective Programmer",
-        "author": "Edmond Lau",
-        "published": "2014-12-14T00:00:00.000Z",
-        "category": "Motivational",
-        "ratings": 4,
-        "readers": 31,
-        "likes": 29
-      },
-      {
-
-        "title": "The Effective Programmer",
-        "author": "Edmond Lau",
-        "published": "2014-12-14T00:00:00.000Z",
-        "category": "Motivational",
-        "ratings": 4,
-        "readers": 31,
-        "likes": 29
-      },
-      {
-        "title": "The Effective Programmer",
-        "author": "Edmond Lau",
-        "published": "2014-12-14T00:00:00.000Z",
-        "category": "Motivational",
-        "ratings": 4,
-        "readers": 31,
-        "likes": 29
-      },
-      {
-        "title": "The Effective Programmer",
-        "author": "Edmond Lau",
-        "published": "2014-12-14T00:00:00.000Z",
-        "category": "Motivational",
-        "ratings": 4,
-        "readers": 31,
-        "likes": 29
-      }
+      "title": "Built To Last",
+      "author": "Jim Collins, Jerry I. Porras",
+      "published": "2001",
+      "genre": "Business, Enterprebeurship",
+      "labels": "Creative, Self-help",
+      "ratings": 5,
+      "readers": 11,
+      "likes": 3,
+      "available": false,
+      "imageUrl": "/images/built_to_last.png"
+    },
+    {
+      "title": "The Lean Startup",
+      "author": "Eric Reis",
+      "published": "2005",
+      "genre": "Enterprebeurship",
+      "labels": "Creative",
+      "ratings": 5,
+      "readers": 121,
+      "likes": 90,
+      "available": false,
+      "imageUrl": "/images/the_lean_startup.png"
+    },
+    {
+      "title": "Effective Python",
+      "author": "Diomidis Spinells",
+      "published": "",
+      "genre": "Programming",
+      "labels": "Creative, Self-help",
+      "ratings": 3,
+      "readers": 11,
+      "likes": 3,
+      "available": false,
+      "imageUrl": "/images/effective_python.png"
+    }, {
+      "title": "Big Magic",
+      "author": "Elizabeth Gilbert",
+      "published": "2014",
+      "genre": "Motivational",
+      "labels": "Creative, Self-help",
+      "ratings": 2,
+      "readers": 34,
+      "likes": 6,
+      "available": true,
+      "imageUrl": "/images/big_magic.png"
+    }
   ]
 }
