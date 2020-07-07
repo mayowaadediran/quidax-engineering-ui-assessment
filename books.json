@@ -1,1 +1,50 @@
-{}
+{
+    "books": [
+    {
+      "title": "The Effective Programmer",
+      "author": "Edmond Lau",
+      "published": "2014-12-14T00:00:00.000Z",
+      "category": "Motivational",
+      "ratings": 4,
+      "readers": 31,
+      "likes": 29
+    },
+    {
+        "title": "The Effective Programmer",
+        "author": "Edmond Lau",
+        "published": "2014-12-14T00:00:00.000Z",
+        "category": "Motivational",
+        "ratings": 4,
+        "readers": 31,
+        "likes": 29
+      },
+      {
+
+        "title": "The Effective Programmer",
+        "author": "Edmond Lau",
+        "published": "2014-12-14T00:00:00.000Z",
+        "category": "Motivational",
+        "ratings": 4,
+        "readers": 31,
+        "likes": 29
+      },
+      {
+        "title": "The Effective Programmer",
+        "author": "Edmond Lau",
+        "published": "2014-12-14T00:00:00.000Z",
+        "category": "Motivational",
+        "ratings": 4,
+        "readers": 31,
+        "likes": 29
+      },
+      {
+        "title": "The Effective Programmer",
+        "author": "Edmond Lau",
+        "published": "2014-12-14T00:00:00.000Z",
+        "category": "Motivational",
+        "ratings": 4,
+        "readers": 31,
+        "likes": 29
+      }
+  ]
+}
