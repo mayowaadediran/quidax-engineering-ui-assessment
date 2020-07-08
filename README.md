@@ -14,11 +14,12 @@ To run, open the index.html file found in the root directory
 
 - Clicking anywhere on the carousel overlay to close it.
 
-
 ## Issues encountered
 
-Issues encountered mainly involved implement the carousel. 
+- Issues encountered mainly involved implementing the carousel. 
 
 ## Feedback 
+
+- No feedback
 
 
