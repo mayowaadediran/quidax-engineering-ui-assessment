@@ -12,7 +12,8 @@ However to ensure all files are working well, please run with http-server
 
 You will need to have nodejs installed.
 
-```# Install http-server
+```
+# Install http-server
 $ npm install http-server -g
 
 # Go into the folder and run http-server
