@@ -1,6 +1,4 @@
 //variables
-
-
 const searchIcon = document.querySelector(".nav__search-icon");
 const searchCloseIcon = document.querySelector(".nav__search--back-btn")
 const navSearch = document.querySelector(".nav__search")
@@ -37,7 +35,7 @@ class Books {
     }
 }
 
-//show books
+
 class UI {
 
     displayBooks(books) {
@@ -319,7 +317,6 @@ class UI {
         searchCloseIcon.addEventListener('click', this.closeSearchNav)
         navSearchButton.addEventListener('click', this.toggleDropDown)
         navSearchInput.addEventListener('click', this.toggleDropDown)
-        // carouselDetails.addEventListener('click', this.showCarouselOverlay)
     }
 }
 
