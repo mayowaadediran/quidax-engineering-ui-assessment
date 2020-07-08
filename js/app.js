@@ -21,6 +21,10 @@ const navHamburger = document.querySelector(".nav__hamburger")
 const sidebar = document.querySelector(".sidebar")
 const sidebarBckBtn = document.querySelector(".sidebar__back-btn")
 
+// const carouselOverlay = document.querySelector(".carousel-cell__overlay")
+// const carouselDetails = document.querySelector(".carousel-cell__details-btn")
+// const carouselClose = document.querySelector(".carousel-cell__close-btn")
+
 
 
 //getbooks
@@ -85,7 +89,7 @@ class UI {
                             <div class="book__details--rating-stars">
                                 ${starsRating}
                             </div>
-                        </div>
+                             </div>
                         <div class="book__details--share">
                             <div class="people">
                                 <svg width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,17 +121,12 @@ class UI {
         books.forEach(book => {
             result += `
             <div class="carousel-cell">
-            <div class="carousel-cell__image">
-              <div class="carousel-cell__details-btn">
-                <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 13.5C0 20.9558 6.04416 27 13.5 27C20.9558 27 27 20.9558 27 13.5C27 6.04416 20.9558 0 13.5 0C6.04416 0 0 6.04416 0 13.5Z" fill="white"/>
-                  <path d="M12 7.5C12 8.32843 12.6716 9 13.5 9C14.3284 9 15 8.32843 15 7.5C15 6.67157 14.3284 6 13.5 6C12.6716 6 12 6.67157 12 7.5Z" fill="#999999"/>
-                  <path d="M12 13.5C12 14.3284 12.6716 15 13.5 15C14.3284 15 15 14.3284 15 13.5C15 12.6716 14.3284 12 13.5 12C12.6716 12 12 12.6716 12 13.5Z" fill="#999999"/>
-                  <path d="M13.5 21C12.6716 21 12 20.3284 12 19.5C12 18.6716 12.6716 18 13.5 18C14.3284 18 15 18.6716 15 19.5C15 20.3284 14.3284 21 13.5 21Z" fill="#999999"/>
-                  </svg>
-              </div>
-              <img src="${book.imageUrl}"/>
-            </div>
+                <div class="carousel-cell__image">
+                    <div class="carousel-cell__details-btn">
+                        <img src="/images/details-toggle.svg"/>
+                    </div>
+                    <img src="${book.imageUrl}"/>
+                </div>
             <div class="carousel-cell__overlay">
               <div class="carousel-cell__close-btn">
                 <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -161,28 +160,61 @@ class UI {
             wrapAround: true
         });
     }
-    //showfeatured
-
-
-    //togglenav 
-
-//showSearchNav()
-//-->on click search icon add .nav__search--show to nav__search
-
-//hidesidebar()
-//on click back btn
-
-
-
 
     showSidebar() {
         sidebar.classList.add('sidebar--show')
     }
 
+    // showCarouselOverlay() {
+    //     const carouselOverlay = document.querySelector(".carousel-cell__overlay")
+    //     const carouselDetails = document.querySelector(".carousel-cell__details-btn")
+    //     carouselDetails.classList.add("carousel-cell__details-btn-hide")
+    //     carouselOverlay.classList.add('carousel-cell__overlay--show')
+    // }
+
+
+    // closeCarouselOverlay() {
+    //     const carouselClose = document.querySelector(".carousel-cell__close-btn")
+    //     const carouselOverlay = document.querySelector(".carousel-cell__overlay")
+    //     const carouselDetails = document.querySelector(".carousel-cell__details-btn")
+    //     carouselOverlay.classList.remove('carousel-cell__overlay--show')
+    //     carouselDetails.classList.remove("carousel-cell__details-btn-hide")
+    // }
 
 
     closeSidebar() {
         sidebar.classList.remove('sidebar--show')
+    }
+
+    carousel() {
+        const carouselDetailBtns = [...document.querySelectorAll(".carousel-cell__details-btn")]
+        const carouselCloseBtns = [...document.querySelectorAll(".carousel-cell__close-btn")]
+
+        carouselDetailBtns.forEach(carouselDetailBtn =>{
+            carouselDetailBtn.addEventListener('click', (e) => {
+                // console.log(e.target)
+              const carouselOverlay = e.target.parentElement.parentElement.nextSibling.nextSibling
+              carouselOverlay.classList.add('carousel-cell__overlay--show')
+              carouselDetailBtn.classList.add("carousel-cell__details-btn-hide")
+            })
+        })
+        
+        carouselCloseBtns.forEach(carouselCloseBtn =>{
+            carouselCloseBtn.addEventListener('click', (e) => {
+                const carouselOverlays = [...document.querySelectorAll(".carousel-cell__overlay")]
+                
+                carouselOverlays.forEach(carouselOverlay => {
+                    carouselOverlay.classList.remove('carousel-cell__overlay--show')
+                })
+                carouselDetailBtns.forEach(carouselDetailBtn => {
+                    carouselDetailBtn.classList.remove("carousel-cell__details-btn-hide")
+                })
+            //   const carouselOverlay = e.target.parentElement.parentElement.nextSibling.nextSibling
+            //   carouselOverlay.classList.add('carousel-cell__overlay--show')
+            //   e.target.classList.add("carousel-cell__details-btn-hide")
+            })
+        })
+
     }
 
     showSearchNav() {
@@ -212,21 +244,9 @@ class UI {
         searchCloseIcon.addEventListener('click', this.closeSearchNav)
         navSearchButton.addEventListener('click', this.toggleDropDown)
         navSearchInput.addEventListener('click', this.toggleDropDown)
+        // carouselDetails.addEventListener('click', this.showCarouselOverlay)
     }
-
-    //showRecent -- first 3
-
-    //showall books 
-
 }
-    
-
-
-//show search terms 
-
-
-//
-
 
 document.addEventListener("DOMContentLoaded", ()=> {
     const ui = new UI()
@@ -240,7 +260,9 @@ document.addEventListener("DOMContentLoaded", ()=> {
         ui.displayFeaturedBooks(books)
         ui.displayRecentBooks(books)
       }).then(() => {
-       
+        ui.carousel()
+
+        // ui.setupUI();
       })
   
   })

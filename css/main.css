@@ -416,16 +416,17 @@
 }
 
 
-.carousel-cell:hover 
+ .carousel-cell:hover 
 .carousel-cell__overlay {
   opacity: 1;
   visibility: visible;
-}
+} 
+
 
 .carousel-cell:hover 
 .carousel-cell__details-btn {
   visibility: hidden;
-}
+} 
 
 .carousel-cell img {
   height: 100%;
@@ -444,6 +445,16 @@
   transition: var(--mainTransition);
   visibility: hidden;
 }
+
+.carousel-cell__overlay--show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.carousel-cell__details-btn-hide {
+  display: none;
+}
+
 
 
 .carousel-cell__overlay--info {
