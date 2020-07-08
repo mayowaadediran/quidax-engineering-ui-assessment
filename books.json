@@ -1,6 +1,7 @@
 {
     "books": [
     {
+      "id": 1,
       "title": "The Effective Programmer",
       "author": "Edmond Lau",
       "published": "2009",
@@ -13,6 +14,7 @@
       "imageUrl": "/images/effective_engineer.png"
     },
     {
+      "id": 2,
       "title": "Built To Last",
       "author": "Jim Collins, Jerry I. Porras",
       "published": "2001",
@@ -25,6 +27,7 @@
       "imageUrl": "/images/built_to_last.png"
     },
     {
+      "id": 3,
       "title": "The Lean Startup",
       "author": "Eric Reis",
       "published": "2005",
@@ -37,6 +40,7 @@
       "imageUrl": "/images/the_lean_startup.png"
     },
     {
+      "id": 4,
       "title": "Effective Python",
       "author": "Diomidis Spinells",
       "published": "",
@@ -47,7 +51,9 @@
       "likes": 3,
       "available": false,
       "imageUrl": "/images/effective_python.png"
-    }, {
+    }, 
+    {
+      "id": 5,
       "title": "Big Magic",
       "author": "Elizabeth Gilbert",
       "published": "2014",
