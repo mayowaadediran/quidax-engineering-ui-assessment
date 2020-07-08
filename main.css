@@ -2,11 +2,9 @@
 
 
 :root {
-  --primaryColor: #f09d51;
   --mainGreen: #65c100;
   --mainBlack: #222;
   --mainGrey: #ececec;
-  --mainSpacing: 0.1rem;
   --mainTransition: all 0.3s linear;
 }
 
@@ -27,23 +25,29 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 4000;
 }
 
 @media screen and (min-width: 910px) {
   .nav {
-    z-index: 000;
+    z-index: 7000;
   }
 }
 
 
 .nav__main {
   height: 100%;
-  /* width: 90%; */
+  width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
 
+.nav__main--container {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .nav__main--left {
@@ -73,15 +77,35 @@
   height: 100%;
   display: none;
   align-items: center;
-  position: relative;
+  justify-content: center;
 }
 
 .nav__search--dropdown {
   position: absolute;
-  top: 70px;
-  height: 150px;
+  top: 40px;
   width: 100%;
-  background-color: aliceblue;
+  background: #FFFFFF;
+  border: 1px solid #EEEEEE;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.05);
+  padding: 20px 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav__search--dropdown-show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.nav__search--dropdown-link {
+  font-size: 11px;
+  line-height: 16px;
+  padding: 11px 30px;
+}
+
+.nav__search--dropdown-link span {
+  color: #AAAAAA;
 }
 
 .nav__search--show {
@@ -94,13 +118,26 @@
 
 .nav__search--input-container {
   display: flex;
+  width: 70%;
+  position: relative;
 }
+
 .nav__search--input {
   height: 40px;
-  width: 235px;
+  width: 100%;
   padding: 11px 22px;
   border: 1px solid #dddddd;
 }
+
+.nav__search--input:focus {
+  border: 1px solid #636363 !important;
+}
+
+
+
+
+
+
 
 .nav__search--back-btn {
   width: 70px;
@@ -145,20 +182,46 @@
   border-radius: 50%;
 }
 
+
+.nav__notifications-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.nav__notifications-text {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 20px;
+  height: 20px;
+  background: #65C100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 12px;
+  color: white;
+}
+
 .nav__avatar,
 .nav__notifications-icon,
 .nav__libraries-icon,
 .nav__search-icon {
   height: 40px;
   width: 40px;
+  margin-left: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 910px) {
   .nav {
     height: 100px;
+  }
+
+  .nav__main {
+    width: 95%;
   }
 
   .nav__hamburger {
@@ -186,30 +249,14 @@
   .nav__search {
     display: flex;
   }
+
+  .nav__search--back-btn {
+    display: none;
+  }
 }
 
 
 /******** SIDEBAR ********/
-/* .sidebar-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  transition: var(--mainTransition);
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 2;
-  visibility: hidden;
-}
-
-@media screen and (min-width: 768px) {
-  .sidebar-overlay {
-    visibility: visible;
-    
-  }
-} */
-
-
 
 .sidebar {
   position: fixed;
@@ -218,7 +265,7 @@
   width: 100%;
   height: 100%;
   /* overflow: hidden; */
-  z-index: 3;
+  z-index: 5000;
   background: #f9f9fb;
   /* padding: 1.5rem; */
   transition: var(--mainTransition);
@@ -256,6 +303,13 @@
   .sidebar-top {
     display: none;
   }
+}
+
+@media screen and (min-width: 1025px) {
+  .sidebar {
+    width: 25%;
+  }
+
 }
 
 
@@ -306,12 +360,29 @@
 }
 
 .sidebar__nav--link a {
+  cursor: pointer;
   font-weight: 300;
   font-size: 14px;
 }
 
+.sidebar__nav--link a:hover {
+  color: #65C100;
+}
+
+.sidebar__nav--link.active a {
+  color: #65C100;
+}
+
 .sidebar__nav--link span {
+  color: #AAAAAA;
   font-size: 12px;
+}
+
+.sidebar__nav--link .notification {
+  background: #65C100;
+  color: white;
+  border-radius: 10px;
+  padding: 2px 8px;
 }
 
 /***** CAROUSEL ******/
@@ -445,6 +516,12 @@
   }
 }
 
+@media screen and (min-width: 1025px) {
+  .dashboard {
+    padding-left: 25%; 
+   }
+}
+
 
 .bookshelf__list {
   display: flex;
@@ -506,13 +583,27 @@
 
 .book__details--review {
   display: flex;
-}
-
-.book__details--rating {
   margin-top: 10px;
 }
 
-.book__details--rating-text {
+.book__details--rating {
+padding-right: 10px;
+ border-right: 1px solid #AAAAAA;
+}
+
+.book__details--share {
+  display: flex;
+  padding-left: 10px;
+  justify-content: space-between;
+}
+
+.like {
+  margin-left: 10px;
+}
+
+
+.book__details--rating-text,
+.people-text {
   font-size: 12px;
   line-height: 14px;
 }
